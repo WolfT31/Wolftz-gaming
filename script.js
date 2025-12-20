@@ -3,6 +3,7 @@ const GITHUB_USER = "WolfT31";
 const GITHUB_REPO = "accesspin";
 const GITHUB_FILE = "pin.json";
 
+
 // ================= PIN CIPHER OBFUSCATION =================
 const PIN_CIPHER = {
   '1': 'X', '2': 'P', '3': 'T', '4': 'M',
@@ -1054,3 +1055,110 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// ================= LOADING ANIMATION CONTROL =================
+function initLoadingAnimation() {
+  // Show loading screen immediately
+  const loadingScreen = document.getElementById('loadingScreen');
+  
+  // Start loading your content
+  simulateLoading();
+}
+
+function simulateLoading() {
+  let progress = 0;
+  const progressBar = document.querySelector('.progress-bar');
+  const loadingText = document.querySelector('.loading-subtext');
+  const loadingMessages = [
+    "Loading Ultimate Gaming Experience...",
+    "Initializing Game Library...",
+    "Preparing Cyberpunk Interface...",
+    "Almost Ready..."
+  ];
+  
+  // Update progress every 300ms
+  const interval = setInterval(() => {
+    progress += Math.random() * 10 + 5; // Random progress between 5-15%
+    
+    if (progress > 100) {
+      progress = 100;
+      clearInterval(interval);
+      
+      // Change text when done
+      if (loadingText) {
+        loadingText.textContent = "Welcome to Wolf Gaming Hub!";
+        loadingText.style.color = "#00f2ff";
+      }
+      
+      // Hide loading screen after delay
+      setTimeout(() => {
+        hideLoadingScreen();
+      }, 800);
+    }
+    
+    // Update progress bar
+    if (progressBar) {
+      progressBar.style.width = `${progress}%`;
+    }
+    
+    // Change loading message at intervals
+    if (loadingText && progress < 100) {
+      if (progress > 25 && progress < 50) {
+        loadingText.textContent = loadingMessages[1];
+      } else if (progress > 50 && progress < 75) {
+        loadingText.textContent = loadingMessages[2];
+      } else if (progress > 75) {
+        loadingText.textContent = loadingMessages[3];
+      }
+    }
+  }, 300);
+}
+
+function hideLoadingScreen() {
+  const loadingScreen = document.getElementById('loadingScreen');
+  
+  // Add fade-out animation
+  loadingScreen.style.opacity = '0';
+  loadingScreen.style.transition = 'opacity 0.5s ease';
+  
+  setTimeout(() => {
+    loadingScreen.style.display = 'none';
+    
+    // JUST SHOW HOME PAGE
+    document.querySelector(".header").style.display = "block";
+    
+    // That's it! User will click button to see PIN modal
+    
+  }, 500);
+}
+
+// ================= UPDATE YOUR INITIALIZATION =================
+document.addEventListener('DOMContentLoaded', () => {
+  // Start loading animation
+  initLoadingAnimation();
+  
+  // Load PINs in background while animation plays
+  loadPinsFromGitHub();
+  
+  // Initialize other components
+  initSlider();
+  initParticles();
+  
+  // Setup event listeners
+  document.getElementById('accessBtn').addEventListener('click', handlePinSubmit);
+  
+  document.getElementById('pinInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handlePinSubmit();
+    }
+  });
+  
+  // Setup logo click effect
+  const logo = document.getElementById('logo');
+  if (logo) {
+    logo.addEventListener('click', () => {
+      logo.classList.add('active');
+      setTimeout(() => logo.classList.remove('active'), 300);
+    });
+  }
+});
