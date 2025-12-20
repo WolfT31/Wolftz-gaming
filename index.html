@@ -5,9 +5,45 @@
   <title>Wolftz Gaming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Add this for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+<!-- ================= LOADING ANIMATION ================= -->
+<div id="loadingScreen" class="loading-screen">
+  <div class="loading-content">
+    <!-- Animated Gamepad Icon -->
+    <div class="gamepad-container">
+      <i class="fas fa-gamepad gamepad-icon"></i>
+      
+      <!-- Cyberpunk Rings -->
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      
+      <!-- Floating Particles -->
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+      <div class="particle particle-6"></div>
+    </div>
+    
+    <!-- Loading Text -->
+    <h2 class="loading-text">WOLF GAMING HUB</h2>
+    <p class="loading-subtext">Loading Ultimate Gaming Experience...</p>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+</div>
+
 <canvas id="particles"></canvas>
+<!-- ... rest of your existing code ... -->
 
 <!-- PIN Protection Modal (hidden by default) -->
 <div id="pinModal" class="pin-modal hidden">
@@ -24,6 +60,7 @@
     <div class="remember-pin">
       <input type="checkbox" id="rememberPin">
       <label for="rememberPin">Remember PIN on this device</label>
+      
     </div>
     
     <!-- CONTACT FOR PIN Button -->
@@ -34,6 +71,11 @@
     <div id="pinError" class="pin-error"></div>
     
     <p class="pin-hint">© ᴄᴏᴘʏʀɪɢʜᴛ 2026 ᴡᴏʟғᴛᴇᴀᴍ</p>
+    <!-- Inside your pin-container div, after the submit button -->
+<button onclick="document.getElementById('pinModal').classList.add('hidden')" 
+        class="back-btn">
+  ← BACK
+</button>
   </div>
 </div>
 
@@ -233,46 +275,6 @@
     </div>
   </div>
 </div>
-      
-      <!-- Additional Buttons (You can add more here) 
-      <div class="additional-buttons">
-        <button class="additional-btn" onclick="openDriver()">DRIVER</button>
-        <button class="additional-btn" onclick="openGraphics()">GRAPHICS</button>
-        <button class="additional-btn" onclick="openSaveData()">SAVE DATA</button>
-        <button class="additional-btn" onclick="openEmulator()">EMULATOR</button>
-        <button class="additional-btn" onclick="openAuthorized()">AUTHORIZED</button>
-        <button class="additional-btn" onclick="openConfig()">CONFIG</button>
-      </div>
-    </div> -->
-    
-   <!--  <div class="details-section">
-      <div class="details-grid">
-        <div class="detail-item">
-          <span class="detail-label">Ukubwa wa Fail:</span>
-          <span id="modalFileSize" class="detail-value"></span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Version:</span>
-          <span id="modalVersion" class="detail-value"></span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">RAM Required:</span>
-          <span id="modalRam" class="detail-value"></span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Category:</span>
-          <span id="modalCategory" class="detail-value"></span>
-        </div>
-      </div>
-    </div>-->
-    
-    <!--<div class="requirements">
-      <h3>System Requirements</h3>
-      <div class="requirements-list" id="modalRequirements"></div>
-    </div>
-  </div>
-</div>-->
-
 <!-- Logout Button (shown after PIN access) -->
 <button id="logoutBtn" class="logout-btn hidden" onclick="logout()">Logout</button>
 
