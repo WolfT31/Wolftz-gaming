@@ -40,8 +40,8 @@ const gamesData = [
     size: '3.2 GB',
     description: 'Call of Duty Modern Warfare 2 - Graphics kali na gameplay smooth.',
     appLink: '#',
-    gameLink: '#',
-    videoLink: '#',
+    gameLink: 'https://vimeo.com/1148366936?share=copy&fl=sv&fe=ci',
+    videoLink: 'https://vimeo.com/1148366936?share=copy&fl=sv&fe=ci',
     version: 'v1.8',
     ram: '4GB+',
     requirements: ['Android 9.0+', 'RAM 4GB+', 'Storage 4GB+', 'Processor Octa-core 2.2GHz+']
