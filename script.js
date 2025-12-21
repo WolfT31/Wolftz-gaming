@@ -1,8 +1,8 @@
+
 // ================= CONFIGURATION =================
 const GITHUB_USER = "WolfT31";
 const GITHUB_REPO = "accesspin";
 const GITHUB_FILE = "pin.json";
-
 
 // ================= PIN CIPHER OBFUSCATION =================
 const PIN_CIPHER = {
@@ -40,8 +40,8 @@ const gamesData = [
     size: '3.2 GB',
     description: 'Call of Duty Modern Warfare 2 - Graphics kali na gameplay smooth.',
     appLink: '#',
-    gameLink: 'https://vimeo.com/1148366936?share=copy&fl=sv&fe=ci',
-    videoLink: 'https://vimeo.com/1148366936?share=copy&fl=sv&fe=ci',
+    gameLink: '#',
+    videoLink: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID', // ADD REAL LINK HERE
     version: 'v1.8',
     ram: '4GB+',
     requirements: ['Android 9.0+', 'RAM 4GB+', 'Storage 4GB+', 'Processor Octa-core 2.2GHz+']
@@ -55,7 +55,7 @@ const gamesData = [
     description: 'PES 2026 - Football bora kwa simu, graphics za HD na timu zote.',
     appLink: '#',
     gameLink: '#',
-    videoLink: '#',
+    videoLink: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID',
     version: 'v3.0',
     ram: '3GB+',
     requirements: ['Android 9+', 'RAM 3GB+', 'Storage 4GB+', 'Adreno 610+']
@@ -69,7 +69,7 @@ const gamesData = [
     description: 'BLUR Racing - Speed na graphics nzuri, races 50+ na gari 40+.',
     appLink: '#',
     gameLink: '#',
-    videoLink: '#',
+    videoLink: 'https://t.me/wolftz',
     version: 'v1.2',
     ram: '3GB+',
     requirements: ['Android 7+', 'RAM 3GB+', 'Storage 2GB+', 'Mali-G72+']
@@ -720,7 +720,7 @@ function openGameModal(gameId) {
   const game = gamesData.find(g => g.id === gameId);
   if (!game) return;
   
-  // Set game data
+  // Update modal content
   document.getElementById('modalGameImage').src = game.image;
   document.getElementById('modalGameName').textContent = game.name;
   document.getElementById('modalGameDescription').textContent = game.description;
@@ -729,58 +729,69 @@ function openGameModal(gameId) {
   document.getElementById('modalRam').textContent = game.ram;
   document.getElementById('modalCategory').textContent = game.category.toUpperCase();
   
-  // Store game data for video button
-  document.getElementById('modalButtons').dataset.gameId = gameId;
-  
+  // Clear and create buttons
   const buttonsContainer = document.getElementById('modalButtons');
   buttonsContainer.innerHTML = '';
   
-  // Add video button with game parameter
+  // VIDEO BUTTON (FIXED)
   if (game.videoLink && game.videoLink !== '#') {
-    addButton('TAZAMA MAELEKEZO', 'btn-purple', () => openVideo(game));
-  } else {
-    // If no video link, show a disabled button or don't show it
-    addButton('TAZAMA MAELEKEZO', 'btn-gray', () => {
-      alert('Hakuna video ya maelekezo inapatikana kwa sasa.');
-    });
+    const videoBtn = document.createElement('button');
+    videoBtn.className = 'download-btn btn-purple';
+    videoBtn.innerHTML = '🎬 TAZAMA MAELEKEZO';
+    videoBtn.onclick = () => {
+      if (game.videoLink && game.videoLink !== '#') {
+        window.open(game.videoLink, '_blank');
+      } else {
+        alert(`Hakuna video ya ${game.name} inapatikana.`);
+      }
+    };
+    buttonsContainer.appendChild(videoBtn);
   }
   
-  // Add other buttons
+  // DOWNLOAD APP BUTTON
   if (game.appLink && game.appLink !== '#') {
-    addButton('Download Game', 'btn-blue', () => window.open(game.appLink, '_blank'));
+    const appBtn = document.createElement('button');
+    appBtn.className = 'download-btn btn-blue';
+    appBtn.innerHTML = '📱 DOWNLOAD APP';
+    appBtn.onclick = () => window.open(game.appLink, '_blank');
+    buttonsContainer.appendChild(appBtn);
   }
   
+  // GAME DATA BUTTON
   if (game.gameLink && game.gameLink !== '#') {
-    addButton('Game Data', 'btn-orange', () => window.open(game.gameLink, '_blank'));
+    const gameBtn = document.createElement('button');
+    gameBtn.className = 'download-btn btn-orange';
+    gameBtn.innerHTML = '🎮 GAME DATA';
+    gameBtn.onclick = () => window.open(game.gameLink, '_blank');
+    buttonsContainer.appendChild(gameBtn);
   }
   
-  if (game.driverLink && game.driverLink !== '#') {
-    addButton('Driver', 'btn-green', () => window.open(game.driverLink, '_blank'));
-  }
+  // Optional buttons (only show if they exist)
+  const optionalButtons = [
+    { key: 'driverLink', text: '🚗 DRIVER', color: 'btn-green' },
+    { key: 'saveDataLink', text: '💾 SAVE DATA', color: 'btn-green' },
+    { key: 'emulatorLink', text: '⚙️ EMULATOR', color: 'btn-gray' },
+    { key: 'graphicsLink', text: '🎨 GRAPHICS', color: 'btn-blue' }
+  ];
   
-  if (game.saveDataLink && game.saveDataLink !== '#') {
-    addButton('Save Data', 'btn-green', () => window.open(game.saveDataLink, '_blank'));
-  }
+  optionalButtons.forEach(btn => {
+    if (game[btn.key] && game[btn.key] !== '#') {
+      const button = document.createElement('button');
+      button.className = `download-btn ${btn.color}`;
+      button.textContent = btn.text;
+      button.onclick = () => window.open(game[btn.key], '_blank');
+      buttonsContainer.appendChild(button);
+    }
+  });
   
-  if (game.emulatorLink && game.emulatorLink !== '#') {
-    addButton('Emulator', 'btn-gray', () => window.open(game.emulatorLink, '_blank'));
-  }
-  
-  if (game.graphicsLink && game.graphicsLink !== '#') {
-    addButton('Graphics', 'btn-blue', () => window.open(game.graphicsLink, '_blank'));
-  }
-  
+  // Show modal
   document.getElementById('gameModal').classList.remove('hidden');
 }
 
-function openVideo(game) {
-  if (game.videoLink && game.videoLink !== '#') {
-    // Open the actual video link in new tab
-    window.open(game.videoLink, '_blank');
-  } else {
-    alert(`Hakuna video ya maelekezo ya ${game.name} inapatikana kwa sasa.`);
-  }
+function closeGameModal() {
+  document.getElementById('gameModal').classList.add('hidden');
 }
+
 // ================= SLIDER SYSTEM =================
 function initSlider() {
   const slider = document.querySelector('.slider:not([style*="display: none"]):not(.initialized)');
