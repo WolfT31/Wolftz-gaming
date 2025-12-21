@@ -40,7 +40,7 @@ const gamesData = [
     size: '3.2 GB',
     description: 'Call of Duty Modern Warfare 2 - Graphics kali na gameplay smooth.',
     appLink: '#',
-    gameLink: '#',
+    gameLink: 'https://t.me/wolftz',
     videoLink: 'https://t.me/wolftz',
     version: 'v1.8',
     ram: '4GB+',
