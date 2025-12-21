@@ -720,6 +720,7 @@ function openGameModal(gameId) {
   const game = gamesData.find(g => g.id === gameId);
   if (!game) return;
   
+  // Set game data
   document.getElementById('modalGameImage').src = game.image;
   document.getElementById('modalGameName').textContent = game.name;
   document.getElementById('modalGameDescription').textContent = game.description;
@@ -728,11 +729,23 @@ function openGameModal(gameId) {
   document.getElementById('modalRam').textContent = game.ram;
   document.getElementById('modalCategory').textContent = game.category.toUpperCase();
   
+  // Store game data for video button
+  document.getElementById('modalButtons').dataset.gameId = gameId;
+  
   const buttonsContainer = document.getElementById('modalButtons');
   buttonsContainer.innerHTML = '';
   
-  addButton('TAZAMA MAELEKEZO', 'btn-purple', openVideo);
+  // Add video button with game parameter
+  if (game.videoLink && game.videoLink !== '#') {
+    addButton('TAZAMA MAELEKEZO', 'btn-purple', () => openVideo(game));
+  } else {
+    // If no video link, show a disabled button or don't show it
+    addButton('TAZAMA MAELEKEZO', 'btn-gray', () => {
+      alert('Hakuna video ya maelekezo inapatikana kwa sasa.');
+    });
+  }
   
+  // Add other buttons
   if (game.appLink && game.appLink !== '#') {
     addButton('Download Game', 'btn-blue', () => window.open(game.appLink, '_blank'));
   }
@@ -760,26 +773,14 @@ function openGameModal(gameId) {
   document.getElementById('gameModal').classList.remove('hidden');
 }
 
-function addButton(text, colorClass, clickHandler) {
-  const buttonsContainer = document.getElementById('modalButtons');
-  const button = document.createElement('button');
-  
-  button.className = `download-btn ${colorClass}`;
-  button.textContent = text;
-  button.onclick = clickHandler;
-  
-  buttonsContainer.appendChild(button);
+function openVideo(game) {
+  if (game.videoLink && game.videoLink !== '#') {
+    // Open the actual video link in new tab
+    window.open(game.videoLink, '_blank');
+  } else {
+    alert(`Hakuna video ya maelekezo ya ${game.name} inapatikana kwa sasa.`);
+  }
 }
-
-function closeGameModal() {
-  document.getElementById('gameModal').classList.add('hidden');
-}
-
-function openVideo() {
-  const gameName = document.getElementById('modalGameName').textContent;
-  alert(`Video maelekezo ya ${gameName} itafunguka...`);
-}
-
 // ================= SLIDER SYSTEM =================
 function initSlider() {
   const slider = document.querySelector('.slider:not([style*="display: none"]):not(.initialized)');
