@@ -41,7 +41,7 @@ const gamesData = [
     description: 'Call of Duty Modern Warfare 2 - Graphics kali na gameplay smooth.',
     appLink: '#',
     gameLink: '#',
-    videoLink: '#',
+    videoLink: 'https://t.me/wolftz',
     version: 'v1.8',
     ram: '4GB+',
     requirements: ['Android 9.0+', 'RAM 4GB+', 'Storage 4GB+', 'Processor Octa-core 2.2GHz+']
