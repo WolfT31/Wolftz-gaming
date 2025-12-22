@@ -1,17 +1,14 @@
-
 // ================= CONFIGURATION =================
 const GITHUB_USER = "WolfT31";
 const GITHUB_REPO = "accesspin";
 const GITHUB_FILE = "pin.json";
 
-// ================= PIN CIPHER OBFUSCATION =================
 const PIN_CIPHER = {
   '1': 'X', '2': 'P', '3': 'T', '4': 'M',
   '5': 'K', '6': 'R', '7': 'S', '8': 'L',
   '9': 'D', '0': 'Z'
 };
 
-// Create reverse cipher for decoding
 const REVERSE_CIPHER = (() => {
   const reverse = {};
   for (const [digit, char] of Object.entries(PIN_CIPHER)) {
@@ -39,12 +36,19 @@ const gamesData = [
     category: 'android',
     size: '3.2 GB',
     description: 'Call of Duty Modern Warfare 2 - Graphics kali na gameplay smooth.',
-    appLink: '#',
-    gameLink: '#',
-    videoLink: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID', // ADD REAL LINK HERE
+    keyLink: '#',
+    gameLink: 'https://romsfun.com/roms/playstation-3/call-of-duty-modern-warfare-2.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: 'https://github.com/RPCSX/rpcsx-ui-android/releases/tag/v20250425',
+    graphicsLink: 'https://github.com/K11MCH1/AdrenoToolsDrivers/releases',
+    firmwareLink: 'https://www.techspot.com/drivers/driver/file/information/17026/',
+    videoLink: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID',
     version: 'v1.8',
     ram: '4GB+',
-    requirements: ['Android 9.0+', 'RAM 4GB+', 'Storage 4GB+', 'Processor Octa-core 2.2GHz+']
+    requirements: ['Android 9.0+', 'RAM 4GB+']
   },
   {
     id: 'pes-2026',
@@ -53,12 +57,20 @@ const gamesData = [
     category: 'android',
     size: '3.1 GB',
     description: 'PES 2026 - Football bora kwa simu, graphics za HD na timu zote.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/s57ae54sfhh7va7/BETEGAMING_EFOOTBALL_2026_PSP_ISO.rar/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    saveDataLink: 'https://www.mediafire.com/file/se6d8fcs5sp3jcg/EFOOTBALL_2026_PSP_TEXTURES_%252B_SAVEDATA_BETEGAMING.rar/file',
+    firmwareLink: '#',
     videoLink: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID',
     version: 'v3.0',
     ram: '3GB+',
-    requirements: ['Android 9+', 'RAM 3GB+', 'Storage 4GB+', 'Adreno 610+']
+    requirements: ['Android 9+', 'RAM 3GB+', 'Storage 4GB+']
   },
   {
     id: 'blur',
@@ -67,44 +79,57 @@ const gamesData = [
     category: 'android',
     size: '1.8 GB',
     description: 'BLUR Racing - Speed na graphics nzuri, races 50+ na gari 40+.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file_premium/t6ozu1mjs75zkin/Blur_Win_R_EN.zip/file',
+    yuzuLink: '#',
+    gamehubLink: 'https://www.mediafire.com/file/yrfj0gv2n79szhn/GameHub_5.3.2_3bd6c76401a1a05e60854cc760be65b7.apk/file',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: 'https://t.me/wolftz',
     version: 'v1.2',
     ram: '3GB+',
-    requirements: ['Android 7+', 'RAM 3GB+', 'Storage 2GB+', 'Mali-G72+']
+    requirements: ['Android 7+', 'RAM 3GB+']
   },
-  // Example game object with optional buttons:
-{
-  id: 'gta-v',
-  name: 'GTA V',
-  image: 'https://i.postimg.cc/3NCSymx3/wp6133812-gta-v-desktop-wallpapers.jpg',
-  category: 'android',
-  size: '4.2 GB',
-  description: 'Grand Theft Auto V - Mji mzima wa Los Santos kwenye simu yako.',
-  appLink: '',
-  gameLink: 'https://your-driver-link.com', // Game Data button
-  driverLink: '#', // Optional - add if game needs driver
-  saveDataLink: 'https://your-driver-link.com', // Optional - add if game has save data
-  emulatorLink: 'https://your-driver-link.com', // Optional - add if game needs emulator
-  graphicsLink: '#', // Optional - add if game has graphics settings
-  version: 'v1.5',
-  ram: '6GB+',
-  requirements: ['Android 10+', 'RAM 6GB+', 'Storage 5GB+', 'Snapdragon 845+']
-},
+  {
+    id: 'gta-v',
+    name: 'GTA V',
+    image: 'https://i.postimg.cc/3NCSymx3/wp6133812-gta-v-desktop-wallpapers.jpg',
+    category: 'android',
+    size: '4.2 GB',
+    description: 'Grand Theft Auto V - Mji mzima wa Los Santos kwenye simu yako.',
+    appLink: '',
+    gameLink: 'https://your-driver-link.com',
+    driverLink: '#',
+    emulatorLink: 'https://your-driver-link.com',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '6GB+',
+    requirements: ['Android 10+', 'RAM 6GB+']
+  },
   {
     id: 'justcause-ii',
     name: 'JUST CAUSE II',
-    image: 'https://i.postimg.cc/T1j4q77G/Picsart-25-12-12-16-54-14-174.jpg',
+    image: 'https://i.postimg.cc/52BBBwd7/Picsart-25-12-22-02-48-58-236.jpg',
     category: 'android',
     size: '2.8 GB',
     description: 'Just Cause 2 - Open world action game na explosions nyingi.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://buzzheavier.com/wd40jnidba2j',
+    yuzuLink: '#',
+    gamehubLink: 'https://www.mediafire.com/file/yrfj0gv2n79szhn/GameHub_5.3.2_3bd6c76401a1a05e60854cc760be65b7.apk/file',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.3',
     ram: '4GB+',
-    requirements: ['Android 8+', 'RAM 4GB+', 'Storage 3GB+', 'Snapdragon 710+']
+    requirements: ['Android 8+', 'RAM 4GB+']
   },
   {
     id: 'cod-black-ops-6',
@@ -113,12 +138,19 @@ const gamesData = [
     category: 'android',
     size: '3.5 GB',
     description: 'HII NI BLACK OPS 2 - Mchezo bora wa vita wa kisasa na graphics kali.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v2.1.0',
     ram: '4GB+',
-    requirements: ['Android 8.0+', 'RAM 4GB+', 'Storage 4GB+', 'Processor Octa-core 2.0GHz+']
+    requirements: ['Android 8.0+', 'RAM 4GB+']
   },
   {
     id: 'amazing-spiderman',
@@ -127,12 +159,20 @@ const gamesData = [
     category: 'android',
     size: '2.9 GB',
     description: 'Spider-Man - Swing katika mji wa New York kama Spider-Man.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: 'https://prodkeys.net/cemu-keys/',
+    gameLink: 'https://romspure.cc/roms/nintendo-wii-u/the-amazing-spider-man-6/',
+    yuzuLink: '#',
+    cemuLink: 'https://cemu.en.uptodown.com/android',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.7',
     ram: '4GB+',
-    requirements: ['Android 9+', 'RAM 4GB+', 'Storage 3GB+', 'Adreno 618+']
+    requirements: ['Android 9+', 'RAM 4GB+']
   },
   {
     id: 'bright-memory',
@@ -141,12 +181,19 @@ const gamesData = [
     category: 'android',
     size: '3.2 GB',
     description: 'Bright Memory - FPS game yenye graphics kali za ray tracing.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://5play.org/en/20091-bright-memory-infinite.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.4',
-    ram: '6GB+',
-    requirements: ['Android 10+', 'RAM 6GB+', 'Storage 4GB+', 'Snapdragon 855+']
+    ram: '4GB+',
+    requirements: ['Android 10+', 'RAM 4GB+']
   },
   {
     id: 'gta-vice-city',
@@ -156,11 +203,11 @@ const gamesData = [
     size: '2.1 GB',
     description: 'GTA Vice City - Classic game ya PC yenye nostalgia.',
     appLink: 'https://t.me/wolftz',
-    gameLink: '#',
+    gameLink: 'https://www.mediafire.com/file/qxsb5l2tb7ivb0s/GTA-Vice-City-Definitiveeee-60-FPS-v1.90.0-mod-apkvision.apk/file?fbclid=I',
     videoLink: '#',
     version: 'v1.0',
-    ram: '2GB+',
-    requirements: ['Windows 7+', 'RAM 2GB+', 'GPU 1GB+', 'DirectX 9.0+']
+    ram: '3GB+',
+    requirements: ['Windows 7+', 'RAM 3GB+']
   },
   {
     id: 'far-cry3',
@@ -169,12 +216,19 @@ const gamesData = [
     category: 'android',
     size: '3.4 GB',
     description: 'Far Cry 3 - Survival shooter kwenye kisiwa cha pirates.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://buzzheavier.com/hnam4zxjo3k5',
+    yuzuLink: '#',
+    gamehubLink: 'https://www.mediafire.com/file_premium/zhlgv398z1ksy24/GameHub-Lite-v5.1.3.apk/file',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.6',
     ram: '4GB+',
-    requirements: ['Android 9+', 'RAM 4GB+', 'Storage 4GB+', 'Snapdragon 730+']
+    requirements: ['Android 9+', 'RAM 4GB+']
   },
   {
     id: 'euro-truck',
@@ -183,12 +237,19 @@ const gamesData = [
     category: 'pc',
     size: '4.5 GB',
     description: 'Euro Truck Simulator - Drive truck barani Ulaya.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/l4dhn8d1a4gug1g/ETS2_1.36.2.2_%252B_70_DLC_%2528_Road_To_Black_Sea_DLC%2529_BY_SA.zip/file',
+    yuzuLink: '#',
+    gamehubLink: 'https://www.mediafire.com/file/yrfj0gv2n79szhn/GameHub_5.3.2_3bd6c76401a1a05e60854cc760be65b7.apk/file',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v2.3',
     ram: '4GB+',
-    requirements: ['Windows 8+', 'RAM 4GB+', 'GPU 2GB+', 'DirectX 11+']
+    requirements: ['Windows 8+', 'RAM 4GB+']
   },
   {
     id: 'tomb-raider',
@@ -197,12 +258,19 @@ const gamesData = [
     category: 'android',
     size: '2.9 GB',
     description: 'Tomb Raider - Adventure game kali na puzzles nyingi.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/yrfj0gv2n79szhn/GameHub_5.3.2_3bd6c76401a1a05e60854cc760be65b7.apk/file',
+    yuzuLink: '#',
+    gamehubLink: 'https://www.mediafire.com/file/yrfj0gv2n79szhn/GameHub_5.3.2_3bd6c76401a1a05e60854cc760be65b7.apk/file',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v2.0',
-    ram: '4GB+',
-    requirements: ['Android 8+', 'RAM 4GB+', 'Storage 3GB+', 'Snapdragon 730+']
+    ram: '6GB+',
+    requirements: ['Android 10', 'RAM 6GB+']
   },
   {
     id: 'gta-iv',
@@ -211,12 +279,21 @@ const gamesData = [
     category: 'pc',
     size: '8.5 GB',
     description: 'Grand Theft Auto IV - Liberty City katika graphics za kisasa.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/ma4lkoin9e0ip7j/GTA%2BIV%2BRIP%2BBy%2BOptiJuegos.7z/file?fbclid=IwdGRjcAOefupjbGNrA55-4GV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHtMheUm2PI10nvNEYeBrpzUGaLFQlaU7k88s_QjOtEhj3cqxDPErnH_9lYHY_aem_vlx8H1UhqSweYs8F-Unjcw',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    winlatorLink: 'https://github.com/StevenMXZ/Winlator-Ludashi/releases?fbclid=IwdGRjcAOefzhjbGNrA55_L2V4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHmbsnHy6QYIWzud3TZ1pJFAGIeffnUeFnkBoKrpKtr5x-6DcLFaz77SU6GEl_aem_C0A9FRfUgp7mbtXwVP6Y0g',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    saveDataLink: 'https://www.mediafire.com/file/9dz5zi47jj54ze6/GTA+4+SAVE+DATA.zip/file?fbclid=IwdGRjcAOefyZjbGNrA55_IGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHkiJactNnQxd5ylHicmjXeeuBnc948u28itF7In3tQRC1Y4z1GVI_loetpdF_aem_n4TOvouVMuEMiKkRNfD2Eg',
     videoLink: '#',
     version: 'v1.2',
     ram: '4GB+',
-    requirements: ['Windows 10+', 'RAM 4GB+', 'GPU 2GB+', 'DirectX 10+']
+    requirements: ['Windows 10+', 'RAM 4GB+', 'GPU 2GB+', 'DirectX 10+-']
   },
   {
     id: 'cod-mw3',
@@ -225,8 +302,15 @@ const gamesData = [
     category: 'android',
     size: '3.8 GB',
     description: 'Call of Duty Modern Warfare 3 - War game yenye graphics za hali ya juu.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file_premium/ah9krdvotrs1ecg/Call_of_Duty_-_Modern_Warfare_3_%2528Europe%252C_Australia%2529.rvz/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.9',
     ram: '6GB+',
@@ -239,8 +323,15 @@ const gamesData = [
     category: 'pc',
     size: '60 GB',
     description: 'The Last of Us Part II - Story game bora yenye emotional gameplay.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '16GB+',
@@ -253,8 +344,15 @@ const gamesData = [
     category: 'pc',
     size: '3.7 GB',
     description: 'GTA San Andreas - Classic open world game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://gta-san-andreas.latestmodapks.com/',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '2GB+',
@@ -267,8 +365,15 @@ const gamesData = [
     category: 'cloud',
     size: 'Cloud',
     description: 'Winds Meet - Cloud game ya adventure na exploration.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file_premium/sm562lgp19jfzpc/base%25282%2529.7z/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'Cloud',
     ram: 'Any',
@@ -281,8 +386,15 @@ const gamesData = [
     category: 'cloud',
     size: 'Cloud',
     description: 'The Last of Us - Cloud version ya game maarufu.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'Cloud',
     ram: 'Any',
@@ -295,8 +407,15 @@ const gamesData = [
     category: 'android',
     size: '3.5 GB',
     description: 'God of War - Action game bora na graphics za PS4.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.8',
     ram: '6GB+',
@@ -309,8 +428,15 @@ const gamesData = [
     category: 'android',
     size: '3.8 GB',
     description: 'God of War II - Continuation ya story ya Kratos.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v2.1',
     ram: '6GB+',
@@ -323,8 +449,15 @@ const gamesData = [
     category: 'cloud',
     size: 'Cloud',
     description: 'GTA V Cloud version - Play GTA V online without download.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'Cloud',
     ram: 'Any',
@@ -337,8 +470,16 @@ const gamesData = [
     category: 'android',
     size: '4.1 GB',
     description: 'Watch Dogs - Hack the city of Chicago.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: 'https://prodkeys.net/cemu-keys/',
+    gameLink: 'https://romspure.cc/roms/nintendo-wii-u/watch-dogs/',
+    cemuLink: 'https://cemu.en.uptodown.com/android',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.5',
     ram: '6GB+',
@@ -351,8 +492,15 @@ const gamesData = [
     category: 'android',
     size: '5.2 GB',
     description: 'Red Dead Redemption - Western open world game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/oyvqrgfikuirhb9/Red_Dead_Redemption_NETFLIX_v1.50.60293175_Unlocked_lore.apks/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.3',
     ram: '8GB+',
@@ -365,8 +513,15 @@ const gamesData = [
     category: 'android',
     size: '4.5 GB',
     description: 'Watch Dogs 2 - Hack katika mji wa San Francisco.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v2.0',
     ram: '6GB+',
@@ -379,8 +534,15 @@ const gamesData = [
     category: 'android',
     size: '3.3 GB',
     description: 'Mortal Kombat - Fighting game yenye fatalities kali.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: 'https://yuzuemulators.com/',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.7',
     ram: '4GB+',
@@ -393,8 +555,15 @@ const gamesData = [
     category: 'android',
     size: '4.8 GB',
     description: 'Uncharted 4 - Adventure game ya treasure hunting.',
-    appLink: '#',
+    keyLink: '#',
     gameLink: '#',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.4',
     ram: '6GB+',
@@ -407,8 +576,15 @@ const gamesData = [
     category: 'android',
     size: '4.0 GB',
     description: 'Warframe - Sci-fi action game ya space ninjas.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file_premium/glnl33gsp2042gs/Warframe_Mobile_%25289_Dic%2529.apks/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v3.2',
     ram: '4GB+',
@@ -421,12 +597,20 @@ const gamesData = [
     category: 'android',
     size: '4.5 GB',
     description: 'Mortal Kombat 11 - Latest fighting game yenye graphics bora.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: 'https://prodkeys.net/yuzu-prod-keys-n25/',
+    gameLink: 'https://www.mediafire.com/file/mxri4xk4w8jg5ja/Mortal+Kombat+11+(USA,+Europe)+(En,Fr,De,Es,It,Pt).xci/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    driverLink: 'https://github.com/K11MCH1/AdrenoToolsDrivers/releases/',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: 'https://github.com/THZoria/NX_Firmware/releases',
     videoLink: '#',
     version: 'v2.1',
     ram: '6GB+',
-    requirements: ['Android 11+', 'RAM 6GB+', 'Storage 5GB+', 'Snapdragon 865+']
+    requirements: ['Android 11+', 'RAM 6GB+']
   },
   {
     id: 'life-is-strange',
@@ -435,12 +619,19 @@ const gamesData = [
     category: 'android',
     size: '2.5 GB',
     description: 'Life is Strange - Story-based adventure game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://apkaward.com/life-is-strange',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '3GB+',
-    requirements: ['Android 8+', 'RAM 3GB+', 'Storage 3GB+', 'Snapdragon 660+']
+    requirements: ['Android 8+', 'RAM 3GB+']
   },
   {
     id: 'bully',
@@ -449,12 +640,19 @@ const gamesData = [
     category: 'android',
     size: '2.2 GB',
     description: 'Bully - School life adventure game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file_premium/hphe263g9meclue/Bully-v1.4.299-60FPS-full-apkvision.apk/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '3GB+',
-    requirements: ['Android 7+', 'RAM 3GB+', 'Storage 3GB+', 'Snapdragon 625+']
+    requirements: ['Android 7+', 'RAM 3GB+']
   },
   {
     id: 'little-nightmare',
@@ -463,12 +661,19 @@ const gamesData = [
     category: 'android',
     size: '2.8 GB',
     description: 'Little Nightmare - Horror puzzle platformer.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/25qac2mpnrzx23g/little-nightmaressss_144-.apk/file',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.3',
     ram: '4GB+',
-    requirements: ['Android 9+', 'RAM 4GB+', 'Storage 3GB+', 'Snapdragon 710+']
+    requirements: ['Android 9+', 'RAM 4GB+']
   },
   {
     id: 'god-hand',
@@ -477,12 +682,19 @@ const gamesData = [
     category: 'android',
     size: '1.5 GB',
     description: 'God Hand - Beat em up game ya classic.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://romsfun.com/roms/playstation-2/god-hand.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '2GB+',
-    requirements: ['Android 6+', 'RAM 2GB+', 'Storage 2GB+', 'Snapdragon 430+']
+    requirements: ['Android 7+', 'RAM 2GB+']
   },
   {
     id: 'downhill',
@@ -491,12 +703,19 @@ const gamesData = [
     category: 'android',
     size: '1.2 GB',
     description: 'Downhill - Bicycle racing game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://romsfun.com/roms/playstation-2/downhill-domination.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: 'https://aethersx2.net/download-aethersx2-for-android/',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.1',
     ram: '2GB+',
-    requirements: ['Android 7+', 'RAM 2GB+', 'Storage 2GB+', 'Mali-G71+']
+    requirements: ['Android 7+', 'RAM 2GB+']
   },
   {
     id: 'jade-empire',
@@ -505,12 +724,20 @@ const gamesData = [
     category: 'android',
     size: '2.0 GB',
     description: 'Jade Empire - Martial arts RPG game.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://www.mediafire.com/file/nj0o0eksdrmtkkm/JadeEmpire_1.0.0_MOD_HF3_sign.apk/file?fbclid=IwdGRjcAORv81jbGNrA5G_x2V4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHtP9BX1dNeDXOoeC4lfk7ma3F2IGtH22g6VJLKQLHeEPreTTx-ppvrH6KAnA_aem_QQDnWHqVshfgId_Jpedhfw',
+    yuzuLink: '#',
+    obbLink: 'https://www.mediafire.com/file/nre0u47x83a8hfg/techj5gamesjeseobb.rar/file?fbclid=IwdGRjcAORv-9jbGNrA5G_6mV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHiALuXTf12Agx9udtUdWcnPy5N7ofXFL0DBzhIQ1spbpY_IJSgn8Iwd5Rsjc_aem_HXhUkMzj0UE9Biegqr8ePw',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.0',
     ram: '3GB+',
-    requirements: ['Android 8+', 'RAM 3GB+', 'Storage 2GB+', 'Snapdragon 660+']
+    requirements: ['Android 8+', 'RAM 3GB+']
   },
   {
     id: 'pascal-wager',
@@ -519,12 +746,397 @@ const gamesData = [
     category: 'android',
     size: '3.5 GB',
     description: 'Pascal\'s Wager - Souls-like action RPG.',
-    appLink: '#',
-    gameLink: '#',
+    keyLink: '#',
+    gameLink: 'https://5play.org/en/11915-pascals-wager.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
     videoLink: '#',
     version: 'v1.5',
     ram: '4GB+',
-    requirements: ['Android 9+', 'RAM 4GB+', 'Storage 4GB+', 'Snapdragon 845+']
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'pc-games',
+    name: 'PC GAMES',
+    image: '#',
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Pascal\'s Wager - Souls-like action RPG.',
+    keyLink: '#',
+    gameLink: 'https://5play.org/en/11915-pascals-wager.html',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'bus-simulator', //game id
+    name: 'BUS SIMULATOR VIP', //name
+    image: 'https://i.postimg.cc/CLFZRTrj/IMG-20251221-WA0044.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'jetli', //game id
+    name: 'JET LI:RISE TO HONOR', //name
+    image: 'https://i.postimg.cc/hjXGLKWd/Picsart-25-12-22-01-03-42-857.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'san-andrea', //game id
+    name: 'gta san Andreas Cloudgame', //name
+    image: 'https://i.postimg.cc/BQ4BCzbn/Picsart-25-12-22-01-26-10-099.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'fcgame', //game id
+    name: 'FC 26', //name
+    image: 'https://i.postimg.cc/MK71MmYx/22537635.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'vicecity', //game id
+    name: 'Gta Vice City', //name
+    image: 'https://i.postimg.cc/SQDJw1VN/Picsart-25-12-22-01-29-42-297.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'cyberpunk', //game id
+    name: 'CYBERPUNK', //name
+    image: 'https://i.postimg.cc/0ymmRdzq/wp6736126-cyberpunk-4k-wallpapers.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'darksouls', //game id
+    name: 'DARK SOULS', //name
+    image: 'https://i.postimg.cc/5N4ktyBc/Dark-Souls-Game-Warrior-4k-Wallpaper-In-High-Quality.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'silent', //game id
+    name: 'SILENT HILL', //name
+    image: 'https://i.postimg.cc/jj1LDDw1/Picsart-25-12-22-01-46-51-224.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'fifa23', //game id
+    name: 'FIFA 23', //name
+    image: 'https://i.postimg.cc/Bn6Qq3SV/Picsart-25-12-22-02-02-01-242.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'resident', //game id
+    name: 'RESIDENT EVIL II', //name
+    image: 'https://i.postimg.cc/Bb4PpzTK/wp3815686-resident-evil-2-remake-wallpapers.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'ninja', //game id
+    name: 'NINJA GAIDEN', //name
+    image: 'https://i.postimg.cc/nLxxXtZ6/Picsart-25-12-22-02-20-19-675.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'residenteviil', //game id
+    name: 'RESIDENT EVIL 4', //name
+    image: 'https://i.postimg.cc/qB12Qk55/Picsart-25-12-22-02-30-43-106.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'residentevil', //game id
+    name: 'RESIDENT EVIL 4', //name
+    image: 'https://i.postimg.cc/mgmxg1Xw/wp12116675-resident-evil-4-remake-wallpapers.png', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'sniperelite', //game id
+    name: 'SNIPER ELITE 4', //name
+    image: 'https://i.postimg.cc/WzNCV2GC/Picsart-25-12-22-02-44-26-438.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'jistcause4', //game id
+    name: 'JUSTCAUSE 4', //name
+    image: 'https://i.postimg.cc/zfMT5pnm/Picsart-25-12-22-02-54-43-766.jpg', 
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'sifu', //game id
+    name: 'SIFU', //name
+    image: 'https://i.postimg.cc/66hTfYyQ/Picsart-25-12-22-02-59-36-521.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
+  },
+  {
+    id: 'combatzone', //game id
+    name: 'COMBAT ZONE', //name
+    image: 'https://i.postimg.cc/66hTfYyQ/Picsart-25-12-22-02-59-36-521.jpg', //change image poster
+    category: 'android',
+    size: '3.5 GB',
+    description: 'Download for Free',
+    keyLink: '#',
+    gameLink: '',
+    yuzuLink: '#',
+    gamehubLink: '#',
+    edenLink: '#',
+    citronLink: '#',
+    emulatorLink: '',
+    graphicsLink: '',
+    firmwareLink: '#',
+    videoLink: '#',
+    version: 'v1.5',
+    ram: '4GB+',
+    requirements: ['Android 9+', 'RAM 4GB+']
   }
 ];
 
@@ -761,17 +1373,27 @@ function openGameModal(gameId) {
   if (game.gameLink && game.gameLink !== '#') {
     const gameBtn = document.createElement('button');
     gameBtn.className = 'download-btn btn-orange';
-    gameBtn.innerHTML = '🎮 GAME DATA';
+    gameBtn.innerHTML = '🎮 Download Game ';
     gameBtn.onclick = () => window.open(game.gameLink, '_blank');
     buttonsContainer.appendChild(gameBtn);
   }
   
   // Optional buttons (only show if they exist)
   const optionalButtons = [
-    { key: 'driverLink', text: '🚗 DRIVER', color: 'btn-green' },
-    { key: 'saveDataLink', text: '💾 SAVE DATA', color: 'btn-green' },
-    { key: 'emulatorLink', text: '⚙️ EMULATOR', color: 'btn-gray' },
-    { key: 'graphicsLink', text: '🎨 GRAPHICS', color: 'btn-blue' }
+    { key: 'driverLink', text: ' Driver', color: 'btn-green' },
+    { key: 'saveDataLink', text: 'Save Data', color: 'btn-green' },
+    { key: 'emulatorLink', text: 'Emulator', color: 'btn-gray' },
+    { key: 'keyLink', text: 'KEY', color: 'btn-green' },
+    { key: 'yuzuLink', text: 'Yuzu Emulator', color: 'btn-green' },
+    { key: 'edenLink', text: 'Eden Emulator', color: 'btn-green' },
+    { key: 'citronLink', text: 'Citron Emulator', color: 'btn-green' },
+    { key: 'gamehubLink', text: 'GameHub Emulator', color: 'btn-green' },
+    { key: 'saveDataLink', text: 'Save Data', color: 'btn-green' },
+    { key: 'winlatorLink', text: 'WinLator Emulator', color: 'btn-green' },
+    { key: 'cemuLink', text: 'Cemu Emulator', color: 'btn-green' },
+    { key: 'obbLink', text: 'Download Obb', color: 'btn-green' },
+    { key: 'firmwareLink', text: 'Firmware', color: 'btn-green' },
+    { key: 'graphicsLink', text: 'Graphics', color: 'btn-blue' }
   ];
   
   optionalButtons.forEach(btn => {
@@ -1084,7 +1706,7 @@ function simulateLoading() {
   const loadingMessages = [
     "Loading Ultimate Gaming Experience...",
     "Initializing Game Library...",
-    "Preparing Cyberpunk Interface...",
+    "Preparing Cybergames Interface...",
     "Almost Ready..."
   ];
   
@@ -1139,7 +1761,6 @@ function hideLoadingScreen() {
     // JUST SHOW HOME PAGE
     document.querySelector(".header").style.display = "block";
     
-    // That's it! User will click button to see PIN modal
     
   }, 500);
 }
